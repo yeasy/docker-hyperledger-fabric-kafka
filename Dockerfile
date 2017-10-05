@@ -21,5 +21,8 @@ RUN curl -fSL "http://www-us.apache.org/dist/kafka/${KAFKA_VERSION}/kafka_${SCAL
 ADD payload/kafka-run-class.sh /opt/kafka/bin/kafka-run-class.sh
 ADD payload/docker-entrypoint.sh /docker-entrypoint.sh
 
-ENTRYPOINT ["bash", "/docker-entrypoint.sh"]
-CMD ["bash", "/opt/kafka/bin/kafka-server-start.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["/opt/kafka/bin/kafka-server-start.sh"]
+
+LABEL org.hyperledger.fabric.version=1.1.0 \
+     org.hyperledger.fabric.base.version=0.4.2
