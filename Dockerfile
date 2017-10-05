@@ -2,7 +2,7 @@
 # This actually follows the official image.
 # github.com/yeasy/docker-hyperledger-fabric-kafka
 
-FROM yeasy/hyperledger-fabric-base:latest
+FROM anapsix/alpine-java:8
 LABEL maintainer "Baohua Yang <yeasy.github.com>"
 
 EXPOSE 9092
